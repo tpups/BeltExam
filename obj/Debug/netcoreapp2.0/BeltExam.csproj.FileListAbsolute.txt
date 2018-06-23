@@ -1,0 +1,11 @@
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/bin/Debug/netcoreapp2.0/BeltExam.deps.json
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/bin/Debug/netcoreapp2.0/BeltExam.runtimeconfig.json
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/bin/Debug/netcoreapp2.0/BeltExam.runtimeconfig.dev.json
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/bin/Debug/netcoreapp2.0/BeltExam.dll
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/bin/Debug/netcoreapp2.0/BeltExam.pdb
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.csprojAssemblyReference.cache
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.csproj.CoreCompileInputs.cache
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.AssemblyInfoInputs.cache
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.AssemblyInfo.cs
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.dll
+/Users/jhutch/Desktop/Dojo/C#/BeltExam/obj/Debug/netcoreapp2.0/BeltExam.pdb

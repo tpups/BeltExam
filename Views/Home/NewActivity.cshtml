@@ -1,0 +1,39 @@
+@model ValidPlan
+<style>
+    h2{
+        display: inline-block;
+        margin-right: 100px;
+    }
+    p{
+        display: inline-block;
+        margin-right: 100px;
+    }
+    a{
+        display: inline-block;
+    }
+</style>
+<h2>Dojo Activity Center</h2>
+<p><a asp-controller="Home" asp-action="Home">Home</a></p>
+<a href="logout">Log off</a>
+<hr>
+<h3>Create an Activity</h3>
+<form asp-action="CreateActivity" asp-controller="Home" method="post">
+    <span asp-validation-for="Title"></span><br>
+    <label asp-for="Title">Title:</label>
+    <input asp-for="Title"><br>
+    <span asp-validation-for="Start"></span><br>
+    <label asp-for="Start">Date and Time:</label>
+    <input type="datetime-local" asp-for="Start"><br>
+    <span asp-validation-for="Duration"></span><br>
+    <label asp-for="Duration">Duration:</label>
+    <input asp-for="Duration">
+    <select name="Unit">
+        <option value="Hours">Hours</option>
+        <option value="Days">Days</option>
+        <option value="Minutes">Minutes</option>
+    </select><br>
+    <span asp-validation-for="Description"></span><br>
+    <label asp-for="Description">Description:</label>
+    <textarea asp-for="Description" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Create Activity">
+</form>

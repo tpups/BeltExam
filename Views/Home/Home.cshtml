@@ -1,0 +1,70 @@
+﻿<style>
+    h2{
+        display: inline-block;
+        margin-right: 100px;
+    }
+    h4{
+        display: inline-block;
+        margin-right: 100px;
+    }
+    a{
+        display: inline-block;
+    }
+</style>
+<h2>Dojo Activity Center</h2>
+<h4>Welcome @ViewBag.name</h4>
+<a href="logout">Log off</a>
+<hr>
+<table class="table table-striped">
+        <tr>
+            <th>Activity</th>
+            <th>Date and Time</th>
+            <th>Duration</th>
+            <th>Event Coordinator</th>
+            <th>Number of Participants</th>
+            <th>Actions</th>
+        </tr>
+        @foreach(var activity in @ViewBag.Activities)
+        {
+            bool flag = false;
+            @foreach(var participant in @activity.Participants)
+            {
+                if(participant.UserId == @ViewBag.UserId)
+                {
+                    flag = true;
+                }
+            }
+            bool overlap = false;
+            @foreach(var plan in @ViewBag.overlaps)
+            {
+                if(activity.PlanId == plan)
+                {
+                    overlap = true;
+                }
+            }
+            <tr>
+                <td><a href="activity/@activity.PlanId">@activity.Title</a></td>
+                <td>@activity.Start.ToString("MMM dd, yyyy h:mm tt")</td>
+                <td>@activity.Duration</td>
+                <td>@activity.Coordinator</td>
+                <td>@activity.Participants.Count</td>
+                @if(@ViewBag.UserId == @activity.CreatorId)
+                {
+                    <td><a href="delete/@activity.PlanId">Delete</a></td>
+                }
+                else if(flag == true)
+                {
+                    <td><a href="leave/@activity.PlanId">Leave</a></td>
+                }
+                else if(overlap == true)
+                {
+                    <td>You're busy</td>
+                }
+                else
+                {
+                    <td><a href="join/@activity.PlanId">Join</a></td>
+                }
+            </tr>
+        }
+    </table>
+<a href="new_activity"><button>Add New Activity</button></a>

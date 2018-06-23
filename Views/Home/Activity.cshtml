@@ -1,0 +1,45 @@
+<style>
+        h2{
+            display: inline-block;
+            margin-right: 100px;
+        }
+        h3{
+            display: inline-block;
+            margin-right: 100px;
+        }
+        p{
+            display: inline-block;
+            margin-right: 100px;
+        }
+        a{
+            display: inline-block;
+        }
+    </style>
+    <h2>Dojo Activity Center</h2>
+    <p><a asp-controller="Home" asp-action="Home">Home</a></p>
+    <a href="/logout">Log off</a>
+    <hr>
+    <h3>@ViewBag.activity.Title</h3>
+        @if(@ViewBag.UserId == @ViewBag.activity.CreatorId)
+        {
+            <button><a href="/delete/@ViewBag.activity.PlanId">Delete</a></button>
+        }
+        else if(@ViewBag.flag == true)
+        {
+            <button><a href="/leave/@ViewBag.activity.PlanId">Leave</a></button>
+        }
+        else
+        {
+            <button><a href="/join/@ViewBag.activity.PlanId">Join</a></button>
+        }
+    <h4>Event Coordinator: @ViewBag.activity.Coordinator</h4>
+    <h4>Description:</h4>
+    <p>@ViewBag.activity.Description</p>
+    <h4>Participants</h4>
+    <ul>
+    @foreach(var person in @ViewBag.activity.Participants)
+    {
+        <li>@person.User.FirstName</li>
+    }
+    </ul>
+    
